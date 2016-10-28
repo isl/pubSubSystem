@@ -83,7 +83,8 @@ public class PublisherTimeSubscriber {
         // the below socket is for the workflow of "workflowMonitoringExecution14" and waits for the start time of it
         Context sContext = ZMQ.context(1);
         Socket subscriber = sContext.socket(ZMQ.SUB);
-        subscriber.connect("tcp://192.168.254.132:5564");
+//        subscriber.connect("tcp://192.168.254.132:5564");
+          subscriber.connect("tcp://" +args[0]+ ":5564");
         subscriber.subscribe("workflowMonitoringExecution14".getBytes());
 
 
